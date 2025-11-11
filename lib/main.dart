@@ -42,7 +42,28 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final cardWidth = screenWidth > 450 ? 400.0 : screenWidth - 32;
+    
+    // Ancho de las tarjetas responsive
+    double cardWidth;
+    if (screenWidth > 1200) {
+      cardWidth = 800;
+    } else if (screenWidth > 900) {
+      cardWidth = 700;
+    } else if (screenWidth > 600) {
+      cardWidth = screenWidth * 0.8;
+    } else {
+      cardWidth = screenWidth - 32;
+    }
+    
+    // Ancho del perfil también responsive
+    double profileWidth;
+    if (screenWidth > 900) {
+      profileWidth = 470;
+    } else if (screenWidth > 600) {
+      profileWidth = screenWidth * 0.8;
+    } else {
+      profileWidth = screenWidth * 0.7;
+    }
     
     return Scaffold(
       appBar: AppBar(),
@@ -52,8 +73,9 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Column(
               children: [
+                // Contenedor de perfil
                 Container(
-                  width: screenWidth > 350 ? 300 : screenWidth - 50,
+                  width: profileWidth,
                   height: 300,
                   padding: const EdgeInsets.all(12.0),
                   margin: const EdgeInsets.all(8.0),
@@ -90,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Padding(
                           padding: const EdgeInsets.only(top: 10),
                           child: Text(
-                            '📧 martin@email.com',
+                            '📧 martinwirtzfp@gmail.com',
                             style: TextStyle(fontSize: 14, color: Colors.blue[900]),
                           ),
                         ),
@@ -234,7 +256,7 @@ class MyProfilePicture extends StatelessWidget {
     return CircleAvatar(
       radius: 75,
       backgroundImage: NetworkImage(
-        'https://freepngimg.com/download/amancio_ortega/23638-2-amancio-ortega-photos.png',
+        'https://shapes.inc/api/public/avatar/wario-ly2q',
       ),
     );
   }
