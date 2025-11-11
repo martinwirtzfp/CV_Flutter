@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'CV Flutter',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primarySwatch: Colors.yellow),
       home: const MyHomePage(),
     );
   }
@@ -58,8 +58,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: const EdgeInsets.all(12.0),
                   margin: const EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 174, 230, 253),
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(10.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
