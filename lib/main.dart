@@ -202,6 +202,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               {'name': 'Android Studio', 'icon': Icons.android, 'color': Colors.lightGreen},
                               {'name': 'VS Code', 'icon': Icons.computer, 'color': Colors.blueAccent},
                             ];
+                            // Duda final tech
                             final tech = technologies[index];
                             return Padding(
                               padding: const EdgeInsets.symmetric(vertical: 6.0),
